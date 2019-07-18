@@ -42,7 +42,7 @@ fullScreen(); //Sets the program to run in full screen mode
 void draw() //runs forever
 {
 
-background(0,190,200); //set black as backgorund colour
+background(0,190,200); //set backgorund colour, you can use any colour
 
 displayPaddles(rectXLeft, rectYLeft, rectWidth, rectHeight);// display left paddle
 displayPaddles(rectXRight, rectYRight, rectWidth, rectHeight);// display right paddle
@@ -145,7 +145,7 @@ scoreRightPlayer = scoreRightPlayer + 1; //increase right player score by 1
 //Check if there is an overlap between ball and left paddle
 void checkLeftPaddle()
 {
-hasOverlappedLeftPaddle = doesOverlap(rectXLeft, rectYLeft, rectWidth,rectHeight, ballX, ballY, radius);
+hasOverlappedLeftPaddle = doesOverlap(rectXLeft, rectYLeft, rectWidth, rectHeight, ballX, ballY, radius);
 if (hasOverlappedLeftPaddle) {
 xSpeed = xSpeed *-1;// reverse direction
 }
@@ -155,7 +155,8 @@ xSpeed = xSpeed *-1;// reverse direction
 //Check if there is an overlap between ball and right paddle
 void checkRightPaddle()
 {
-hasOverlappedRightPaddle = doesOverlap(rectXRight, rectYRight, rectWidth,rectHeight, ballX, ballY, radius);
+hasOverlappedRightPaddle = doesOverlap(rectXRight, rectYRight, rectWidth,
+rectHeight, ballX, ballY, radius);
 if (hasOverlappedRightPaddle) {
 xSpeed = xSpeed *-1; //reverse direction
 }
@@ -175,7 +176,7 @@ rectYRight = constrain( mouseY, rectYLeft, screenHeight - rectHeight); //move ri
 }//end of move paddle function
 
 //Checks if ball overlaps paddle
-boolean doesOverlap(float xPaddle, float yPaddle, float widthPaddle, floatheightPaddle, float xBall, float yBall, float radius)
+boolean doesOverlap(float xPaddle, float yPaddle, float widthPaddle, float heightPaddle, float xBall, float yBall, float radius)
  {
 float ballLeftEdge = xBall-radius; //left edge of ball
 float ballBottomEdge = yBall+radius; //bottom edge of ball
