@@ -1,8 +1,8 @@
 
 //ScreenWdith= 1280, ScreenHeight = 720
 
-float screenWidth = 1280; //set to your screen width
-float screenHeight = 720; //set to your screen height
+float screenWidth = width; //set to your screen width using system variable
+float screenHeight = height; //set to your screen height using system variable
 
 float rectXLeft = 0; //X-position of left paddle
 float rectYLeft = 0; //Y-position of left paddle
@@ -10,8 +10,8 @@ float rectYLeft = 0; //Y-position of left paddle
 float rectWidth = 30; //Width of all paddles
 float rectHeight = 170; //Height of all paddles
 
-float rectXRight = 1250; //X-position of paddles width
-float rectYRight = 550; //Y-position of paddles height
+float rectXRight = width-rectWidth; //X-position of paddles width - 1250
+float rectYRight = height - rectHeight; //Y-position of paddles height - 550
 
 int ballX = 640; //X-postion of ball is ScreenWidth/2
 int ballY = 360; //Y-position of ball is ScreenHeight/2
