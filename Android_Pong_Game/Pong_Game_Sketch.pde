@@ -15,8 +15,7 @@ float rectYRight = height - rectHeight; //Y-position of paddles height - 550
 
 int ballX = 640; //X-postion of ball is ScreenWidth/2
 int ballY = 360; //Y-position of ball is ScreenHeight/2
-int ballWidth = 30; //Width of ball
-int ballHeight = 30; //Height of ball
+int ballDiameter = 30; //Width and Height of ball
 int xSpeed = 5; //ball's horizontal speed
 int ySpeed = 5; //ball's vertical speed
 int radius =15; // half of ball width and height since they are same
@@ -47,7 +46,7 @@ background(0,190,200); //set backgorund colour, you can use any colour
 displayPaddles(rectXLeft, rectYLeft, rectWidth, rectHeight);// display left paddle
 displayPaddles(rectXRight, rectYRight, rectWidth, rectHeight);// display right paddle
 
-displayBall(ballX, ballY, ballWidth, ballHeight); // call function to display ball
+displayBall(ballX, ballY, ballDiameter, ballDiameter); // call function to display ball
 
 displayScore(scoreLeftPlayer, scoreLeftPlayerX, scoreLeftPlayerY); //left player score
 displayScore(scoreRightPlayer, scoreRightPlayerX, scoreRightPlayerY); //  right player score
@@ -112,22 +111,21 @@ ballY = ballY+ySpeed;
 }
 }//end of move ball function
 
-
-//check the wall ball hit and increament player score accordingly
+//Check walls
 void checkWall()
 {
 
-//Check if ball hits top or bottom walls
+//Check if ball hits top or bottom walls then make it bouce or reverse direction
 if ((ballY-radius < 0) || (ballY+radius) > screenHeight) {
 ySpeed = ySpeed * -1; //Reverse direction
 }
 
-//Check if ball hits left or right walls
+//Check if ball hits left or right walls and increament score accordingly
 if ((ballX+radius) > screenWidth) {
 gameOn = false;
 
 //move ball back to center
-ballX =640; 
+ballX = 640; 
 ballY = 360;
 scoreLeftPlayer = scoreLeftPlayer + 1; //increase left player score by 1
 } else if (ballX-radius < 0) 
@@ -142,7 +140,7 @@ scoreRightPlayer = scoreRightPlayer + 1; //increase right player score by 1
 }// end of check wall functio
 
  
-//Check if there is an overlap between ball and left paddle
+//Check if there is an overlap between ball and left paddle then bounce ball
 void checkLeftPaddle()
 {
 hasOverlappedLeftPaddle = doesOverlap(rectXLeft, rectYLeft, rectWidth, rectHeight, ballX, ballY, radius);
@@ -152,7 +150,7 @@ xSpeed = xSpeed *-1;// reverse direction
 }// end of check left paddle function
 
 
-//Check if there is an overlap between ball and right paddle
+//Check if there is an overlap between ball and right paddle then bounce ball
 void checkRightPaddle()
 {
 hasOverlappedRightPaddle = doesOverlap(rectXRight, rectYRight, rectWidth,
