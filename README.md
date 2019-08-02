@@ -12,6 +12,6 @@ in the project. APDE app can be downloaded on Google Play Store (https://play.go
 1. Download and install APDE from Google PlayStore (if you run into security issues, goto security in settings and allow installation form unknown sources).
 2. Press the button to the right of the play button, it might be two angle brackets(<>) or                
 a phone icon. 
-3. Choose preview (the angle brackets - <>).
+3. Choose "Preview" (the angle brackets - <>).
 4. Now press the play button.
 5. Install Sketch viewer if you are prompted to do so.
