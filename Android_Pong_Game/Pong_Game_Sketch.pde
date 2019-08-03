@@ -52,8 +52,8 @@ displayScore(scoreLeftPlayer, scoreLeftPlayerX, scoreLeftPlayerY); //left player
 displayScore(scoreRightPlayer, scoreRightPlayerX, scoreRightPlayerY); //  right player score
 
 gameOn = setGameMode(); // start game if screen is pressed
-moveBall(); //move ball if game is on
-checkWall(); //checks walls and determine which player score a point
+moveBall(); //move ball after screen is pressed
+checkWall(); //checks walls and determine which player scores a point
 
 movePaddle(); //function to move paddles when screen is touched
 checkLeftPaddle(); // call function to check left paddle and ball overlap
